@@ -12,11 +12,16 @@
     <sprite>sprites\spr_fumaca_right</sprite>
     <sprite>sprites\spr_fumaca_left</sprite>
     <sprite>sprites\spr_shark</sprite>
+    <sprite>sprites\spr_lifesaver_left</sprite>
+    <sprite>sprites\spr_lifesaver_right</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background</background>
   </backgrounds>
   <paths name="paths"/>
+  <fonts name="fonts">
+    <font>fonts\fnt_score</font>
+  </fonts>
   <objects name="objects">
     <object>objects\obj_boat</object>
     <object>objects\obj_controle</object>
@@ -26,6 +31,9 @@
     <object>objects\obj_fumaca_right</object>
     <object>objects\obj_dropper</object>
     <object>objects\obj_shark</object>
+    <object>objects\obj_points</object>
+    <object>objects\obj_lifesaver_left</object>
+    <object>objects\obj_lifesaver_right</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_game</room>
