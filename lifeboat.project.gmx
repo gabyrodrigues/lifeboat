@@ -9,6 +9,9 @@
     <sprite>sprites\spr_man_falling</sprite>
     <sprite>sprites\spr_boat</sprite>
     <sprite>sprites\spr_island</sprite>
+    <sprite>sprites\spr_fumaca_right</sprite>
+    <sprite>sprites\spr_fumaca_left</sprite>
+    <sprite>sprites\spr_shark</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background</background>
@@ -19,6 +22,10 @@
     <object>objects\obj_controle</object>
     <object>objects\obj_island</object>
     <object>objects\obj_man_falling</object>
+    <object>objects\obj_fumaca_left</object>
+    <object>objects\obj_fumaca_right</object>
+    <object>objects\obj_dropper</object>
+    <object>objects\obj_shark</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_game</room>
