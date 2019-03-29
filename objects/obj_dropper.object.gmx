@@ -83,7 +83,7 @@ if(num &lt;= 1){
     //pos_y = 46;
     
     atual_X = irandom(3); 
-    atual_Y = irandom(4); 
+    atual_Y = 0; 
     
     if(pos_Y[atual_Y] == 0){
         obj_man_falling.image_index = 0;
