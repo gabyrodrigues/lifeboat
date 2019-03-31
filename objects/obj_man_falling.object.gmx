@@ -49,75 +49,17 @@ pos_Y[1] = 148;
 pos_Y[2] = 186;
 pos_Y[3] = 224;
 pos_Y[4] = 262;
+pos_Y[5] = 262;
 
-atual_X = random_range(0, 3);
-atual_Y = 0;
+atual_X = irandom_range(0, 3);
+//atual_Y = sprite_index;
 
-seg = 1;
+x = pos_X[atual_X];
+y = pos_Y[0];
 
-alarm[0] = -1;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="1">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>
-    //if (instance_exists(obj_boat)){
-        if (obj_boat.atual - 1 == atual_X){
-            global.points += 1;
-            instance_destroy();
-        }else{
-            instance_destroy();
-            //espaço para perder a vida   
-        }
-    //}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if (atual_Y &lt; 4){
-    atual_Y++;
-    alarm[0] = -1;
-}else{
-    alarm[1] = room_speed * seg;
-    alarm[0] = -1;
-}
+//seg = 1;
 
+//alarm[0] = -1;
 </string>
           </argument>
         </arguments>
@@ -141,43 +83,26 @@ alarm[0] = -1;
           <argument>
             <kind>1</kind>
             <string>x = pos_X[atual_X];
-y = pos_Y[atual_Y];
+y = pos_Y[image_index];
 
-if (alarm[0] == -1){
-    alarm[0] = room_speed * seg;
+if animation_hit_frame(5){
+    //colisão
+    if (global.atual == (atual_X + 1)){
+        global.points += 1;
+    }else{
+        //codigo para perder vida
+    }
+    instance_destroy();
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///colisão
-/*if (atual_Y == 4){
-    //if (instance_exists(obj_boat)){
-        if (obj_boat.atual - 1 == atual_X){
-            global.points += 1;
-            instance_destroy();
-        }else{
-            instance_destroy();
-            //espaço para perder a vida   
-        }
-    //}
-}*/
+
+show_debug_message(global.atual);
+show_debug_message(atual_X);
+
+//if (alarm[0] == -1){
+//    alarm[0] = room_speed * seg;
+//}
+
+
 </string>
           </argument>
         </arguments>

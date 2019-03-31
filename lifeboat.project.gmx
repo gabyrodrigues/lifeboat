@@ -19,6 +19,9 @@
     <background>background\background</background>
   </backgrounds>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\animation_hit_frame.gml</script>
+  </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_score</font>
   </fonts>

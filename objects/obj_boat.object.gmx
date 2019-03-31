@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>atual = 0;
+            <string>global.atual = 0;
 //pos_max = [2, 5];
 //pos_X = [160, 285, 410, 535, 660, 785];
 
@@ -77,44 +77,17 @@ if key_right{
 
 //cálculo dos movimentos para se mover
 
-if (key_right &amp;&amp; atual &lt; pos_max[global.game]){
+if (key_right &amp;&amp; global.atual &lt; pos_max[global.game]){
 //if (key_right &amp;&amp; atual &lt; 5){
-    atual += 1;
+    global.atual += 1;
 }
 
-if (key_left &amp;&amp; atual &gt; 0){
-    atual -= 1;
+if (key_left &amp;&amp; global.atual &gt; 0){
+    global.atual -= 1;
 }
 
-x = pos_X[atual];
+x = pos_X[global.atual];
 
-/*if instance_place(x, y, obj_man_falling){
-    global.points += 5;
-}*/
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_man_falling">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>global.points += 1;
-with other instance_destroy();
 </string>
           </argument>
         </arguments>
