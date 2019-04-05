@@ -39,10 +39,10 @@ P4: 631px - 101px
 */
 
 //posições fixas que o passageiro cai
-pos_X[0] = 368;
-pos_X[1] = 457;
+pos_X[0] = 335;
+pos_X[1] = 445;
 pos_X[2] = 555;
-pos_X[3] = 610;
+pos_X[3] = 635;
 
 pos_Y[0] = 110;
 pos_Y[1] = 148;
@@ -91,6 +91,20 @@ if animation_hit_frame(5){
         global.points += 1;
     }else{
         //codigo para perder vida
+        global.chances += 1;
+        if (global.chances == 1) {
+            instance_create(958, 58, obj_miss);
+            obj_miss.image_index = 0;
+            //draw_sprite(spr_miss, 0, 958, 58);
+        }else if (global.chances == 2) {
+            instance_create(924, 58, obj_miss);
+            obj_miss.image_index = 1;
+            //draw_sprite(spr_miss, 1, 924, 58);
+        } else if (global.chances == 3) {
+            instance_create(888, 58, obj_miss);
+            obj_miss.image_index = 1;
+            //draw_sprite(spr_miss, 1, 888, 58);
+        }
     }
     instance_destroy();
 }

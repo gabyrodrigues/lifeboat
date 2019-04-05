@@ -14,6 +14,7 @@
     <sprite>sprites\spr_shark</sprite>
     <sprite>sprites\spr_lifesaver_left</sprite>
     <sprite>sprites\spr_lifesaver_right</sprite>
+    <sprite>sprites\spr_miss</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background</background>
@@ -37,6 +38,7 @@
     <object>objects\obj_points</object>
     <object>objects\obj_lifesaver_left</object>
     <object>objects\obj_lifesaver_right</object>
+    <object>objects\obj_miss</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_game</room>

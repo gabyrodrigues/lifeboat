@@ -51,6 +51,10 @@ pos_X[5] = 738;
 
 pos_Y = 315;
 
+x = pos_X[0];
+
+
+y = pos_Y;
 </string>
           </argument>
         </arguments>
@@ -73,7 +77,9 @@ pos_Y = 315;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//num = irandom_range(1,100);
+            <string>x = pos_X[image_index];
+
+//num = irandom_range(1,100);
 //if(num &lt;= 1){
 
     /*var i;

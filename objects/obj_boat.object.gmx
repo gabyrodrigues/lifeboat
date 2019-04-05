@@ -32,12 +32,12 @@
 pos_max[0] = 2;
 pos_max[1] = 5;
 
-pos_X[0] = 160;
-pos_X[1] = 285;
-pos_X[2] = 410;
-pos_X[3] = 535;
-pos_X[4] = 660;
-pos_X[5] = 785;
+pos_X[0] = 150;
+pos_X[1] = 270;
+pos_X[2] = 390;
+pos_X[3] = 515;
+pos_X[4] = 625;
+pos_X[5] = 755;
 
 //image_index = irandom(2);
 </string>
@@ -73,7 +73,10 @@ if key_right{
 } else if key_left{
     obj_lifesaver_left.image_index = 1;
     obj_lifesaver_right.image_index = 0;
-}
+}/*else{
+    obj_lifesaver_left.image_index = 0;
+    obj_lifesaver_right.image_index = 0;
+}*/
 
 //cálculo dos movimentos para se mover
 
