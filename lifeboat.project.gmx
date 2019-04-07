@@ -15,6 +15,10 @@
     <sprite>sprites\spr_lifesaver_left</sprite>
     <sprite>sprites\spr_lifesaver_right</sprite>
     <sprite>sprites\spr_miss</sprite>
+    <sprite>sprites\spr_man_rescued</sprite>
+    <sprite>sprites\spr_man_safe_left</sprite>
+    <sprite>sprites\spr_man_safe_right</sprite>
+    <sprite>sprites\spr_man_sinking</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background</background>

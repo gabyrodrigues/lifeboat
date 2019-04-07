@@ -39,6 +39,7 @@ P4: 631px - 101px
 */
 
 //posições fixas que o passageiro cai
+
 pos_X[0] = 335;
 pos_X[1] = 445;
 pos_X[2] = 555;
@@ -87,30 +88,33 @@ y = pos_Y[image_index];
 
 if animation_hit_frame(5){
     //colisão
-    if (global.atual == (atual_X + 1)){
-        global.points += 1;
-    }else{
-        //codigo para perder vida
-        global.chances += 1;
-        if (global.chances == 1) {
-            instance_create(958, 58, obj_miss);
-            obj_miss.image_index = 0;
-            //draw_sprite(spr_miss, 0, 958, 58);
-        }else if (global.chances == 2) {
-            instance_create(924, 58, obj_miss);
-            obj_miss.image_index = 1;
-            //draw_sprite(spr_miss, 1, 924, 58);
-        } else if (global.chances == 3) {
-            instance_create(888, 58, obj_miss);
-            obj_miss.image_index = 1;
-            //draw_sprite(spr_miss, 1, 888, 58);
+        if (global.atual == (atual_X + 1) &amp;&amp; global.resgate &lt;= 3){
+            global.points += 1;
+            global.resgate += 1;
+        }else{
+            //codigo para perder vida
+            global.chances += 1;
+            global.resgate = 0;
+            if (global.chances == 1) {
+                instance_create(958, 58, obj_miss);
+                obj_miss.image_index = 0;
+                //draw_sprite(spr_miss, 0, 958, 58);
+            }else if (global.chances == 2) {
+                instance_create(924, 58, obj_miss);
+                obj_miss.image_index = 1;
+                //draw_sprite(spr_miss, 1, 924, 58);
+            } else if (global.chances == 3) {
+                instance_create(888, 58, obj_miss);
+                obj_miss.image_index = 1;
+                //draw_sprite(spr_miss, 1, 888, 58);
+            }
         }
-    }
-    instance_destroy();
+        instance_destroy();
 }
 
-show_debug_message(global.atual);
-show_debug_message(atual_X);
+//show_debug_message(global.atual);
+show_debug_message(global.resgate);
+//show_debug_message(atual_X);
 
 //if (alarm[0] == -1){
 //    alarm[0] = room_speed * seg;

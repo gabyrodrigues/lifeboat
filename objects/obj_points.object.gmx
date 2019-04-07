@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>global.points = 0;
 global.chances = 0;
+global.resgate = 0;
 </string>
           </argument>
         </arguments>
