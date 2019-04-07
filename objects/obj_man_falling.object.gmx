@@ -61,6 +61,25 @@ y = pos_Y[0];
 //seg = 1;
 
 //alarm[0] = -1;
+
+/*
+passageiros nadando:
+
+P1: 280px - 305px
+P2: 408px - 305px
+P3: 535px - 305px
+P4: 643px - 305px
+P5: 769px - 305px
+*/
+
+//posições fixas que o passageiro nada
+man_sinking_pos_X[0] = 280;
+man_sinking_pos_X[1] = 408;
+man_sinking_pos_X[2] = 535;
+man_sinking_pos_X[3] = 643;
+man_sinking_pos_X[4] = 769;
+
+man_sinking_pos_Y = 305;
 </string>
           </argument>
         </arguments>
@@ -108,12 +127,14 @@ if animation_hit_frame(5){
                 obj_miss.image_index = 1;
                 //draw_sprite(spr_miss, 1, 888, 58);
             }
+            //nadando depois que não é resgatado
+            man_sinking = instance_create(man_sinking_pos_X[atual_X], man_sinking_pos_Y, obj_man_sinking);
+            man_sinking.x = man_sinking_pos_X[atual_X];
+            man_sinking.direction = 180;
         }
         instance_destroy();
 }
 
-//show_debug_message(global.atual);
-show_debug_message(global.resgate);
 //show_debug_message(atual_X);
 
 //if (alarm[0] == -1){

@@ -43,6 +43,7 @@
     <object>objects\obj_lifesaver_left</object>
     <object>objects\obj_lifesaver_right</object>
     <object>objects\obj_miss</object>
+    <object>objects\obj_man_sinking</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_game</room>

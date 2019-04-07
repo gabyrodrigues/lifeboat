@@ -81,6 +81,7 @@ if (place_meeting(x, y, obj_boat)){
     if (global.resgate &gt; 0){
         global.resgate -= 1;
         global.points += 1;
+        
     }
 }
 </string>
