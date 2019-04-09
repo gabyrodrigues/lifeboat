@@ -25,9 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed = 0.016;
-
-/*
+            <string>/*
 passageiros:
 
 338px - 660px
@@ -102,7 +100,11 @@ man_sinking_pos_Y = 305;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x = pos_X[atual_X];
+            <string>if global.pause == false{
+
+image_speed = 0.016;
+
+x = pos_X[atual_X];
 y = pos_Y[image_index];
 
 if animation_hit_frame(5){
@@ -114,27 +116,31 @@ if animation_hit_frame(5){
             //codigo para perder vida
             global.chances += 1;
             global.resgate = 0;
+            instance_create(958, 70, obj_miss);
             if (global.chances == 1) {
-                instance_create(958, 58, obj_miss);
                 obj_miss.image_index = 0;
                 //draw_sprite(spr_miss, 0, 958, 58);
             }else if (global.chances == 2) {
-                instance_create(924, 58, obj_miss);
+                //instance_create(924, 58, obj_miss);
                 obj_miss.image_index = 1;
                 //draw_sprite(spr_miss, 1, 924, 58);
             } else if (global.chances == 3) {
-                instance_create(888, 58, obj_miss);
-                obj_miss.image_index = 1;
+                //instance_create(888, 58, obj_miss);
+                obj_miss.image_index = 2;
                 //draw_sprite(spr_miss, 1, 888, 58);
             }
             //nadando depois que não é resgatado
-            man_sinking = instance_create(man_sinking_pos_X[atual_X], man_sinking_pos_Y, obj_man_sinking);
-            man_sinking.x = man_sinking_pos_X[atual_X];
-            man_sinking.direction = 180;
+            instance_create(0, 0, obj_man_sinking);
+            obj_man_sinking.atual_X = atual_X;
+            obj_man_sinking.y = 305;
+            //global.pause = true;
+            //man_sinking.direction = 180;
         }
         instance_destroy();
 }
-
+}else{
+    image_speed = 0;
+}
 //show_debug_message(atual_X);
 
 //if (alarm[0] == -1){

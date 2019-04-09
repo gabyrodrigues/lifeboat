@@ -28,6 +28,7 @@
             <string>global.game = 1;
 alarm[0] = -1;
 spawn = "on";
+global.pause = false;
 </string>
           </argument>
         </arguments>
@@ -76,16 +77,19 @@ alarm[0] = -1;
             <kind>1</kind>
             <string>///spawner man_falling
 
-if spawn == "on"{
-    var man_count = instance_number(obj_man_falling);
-    
-    if (instance_exists(obj_boat) and man_count &lt;= global.points / 4){
-        if man_count &gt; 4{
-            exit;
-        }
-        instance_create(0, 0, obj_man_falling);
-        spawn = "off";
-        alarm[0] = room_speed * 1;
+
+if global.pause == false{
+            if spawn == "on"{
+                var man_count = instance_number(obj_man_falling);
+                
+                if (instance_exists(obj_boat) and man_count &lt;= global.points / 4){
+                    if man_count &gt; 4{
+                        exit;
+                    }
+                    instance_create(0, 0, obj_man_falling);
+                    spawn = "off";
+                    alarm[0] = room_speed * 1;
+                }
     }
 }
 </string>

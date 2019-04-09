@@ -25,7 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.atual = 0;
+            <string>image_speed = 0;
+global.atual = 0;
+
+
 //pos_max = [2, 5];
 //pos_X = [160, 285, 410, 535, 660, 785];
 
@@ -87,7 +90,10 @@ obj_lifesaver_right.image_index = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//get player input
+            <string>if global.pause == false{
+image_index = global.resgate;
+
+//get player input
 key_left = keyboard_check_pressed(vk_left);
 key_right = keyboard_check_pressed(vk_right);
 
@@ -113,6 +119,8 @@ if (key_left &amp;&amp; global.atual &gt; 0){
 }
 
 x = pos_X[global.atual];
+
+}
 
 </string>
           </argument>
