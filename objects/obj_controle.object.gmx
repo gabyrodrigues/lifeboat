@@ -52,7 +52,9 @@ global.pause = false;
           <argument>
             <kind>1</kind>
             <string>spawn = "on";
+//audio_play_sound(snd_move4, 0, false);
 alarm[0] = -1;
+
 </string>
           </argument>
         </arguments>
@@ -79,17 +81,17 @@ alarm[0] = -1;
 
 
 if global.pause == false{
-            if spawn == "on"{
-                var man_count = instance_number(obj_man_falling);
+    if spawn == "on"{
+        var man_count = instance_number(obj_man_falling);
                 
-                if (instance_exists(obj_boat) and man_count &lt;= global.points / 4){
-                    if man_count &gt; 4{
-                        exit;
-                    }
-                    instance_create(0, 0, obj_man_falling);
-                    spawn = "off";
-                    alarm[0] = room_speed * 1;
-                }
+        if (instance_exists(obj_boat) and man_count &lt;= global.points / 4){
+            if man_count &gt; 4{
+                exit;
+            }
+            instance_create(0, 0, obj_man_falling);
+            spawn = "off";
+            alarm[0] = room_speed * 1;
+        }
     }
 }
 </string>

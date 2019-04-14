@@ -102,13 +102,13 @@ man_sinking_pos_Y = 305;
             <kind>1</kind>
             <string>if global.pause == false{
 
-image_speed = 0.016;
+    image_speed = 0.016;
 
-x = pos_X[atual_X];
-y = pos_Y[image_index];
+    x = pos_X[atual_X];
+    y = pos_Y[image_index];
 
-if animation_hit_frame(5){
-    //colisão
+    if animation_hit_frame(5){
+        //colisão
         if (global.atual == (atual_X + 1) &amp;&amp; global.resgate &lt;= 3){
             global.points += 1;
             global.resgate += 1;
@@ -117,35 +117,36 @@ if animation_hit_frame(5){
             global.chances += 1;
             global.resgate = 0;
             instance_create(958, 70, obj_miss);
+            //audio_play_sound(snd_miss2, 10, false);
+            
             if (global.chances == 1) {
                 obj_miss.image_index = 0;
-                //draw_sprite(spr_miss, 0, 958, 58);
-            }else if (global.chances == 2) {
-                //instance_create(924, 58, obj_miss);
+            }else if (global.chances == 2 &amp;&amp; obj_miss.image_index == 0) {
+                instance_destroy(obj_miss);
+                instance_create(958, 70, obj_miss);
                 obj_miss.image_index = 1;
-                //draw_sprite(spr_miss, 1, 924, 58);
-            } else if (global.chances == 3) {
-                //instance_create(888, 58, obj_miss);
+            } else if (global.chances == 3 &amp;&amp; obj_miss.image_index == 1) {
+                instance_destroy(obj_miss);
+                instance_create(958, 70, obj_miss);
                 obj_miss.image_index = 2;
-                //draw_sprite(spr_miss, 1, 888, 58);
+                global.pause = true;
             }
+            
             //nadando depois que não é resgatado
             instance_create(0, 0, obj_man_sinking);
             obj_man_sinking.atual_X = atual_X;
             obj_man_sinking.y = 305;
+            //obj_shark.x = obj_shark.pos_X[0];
             //global.pause = true;
             //man_sinking.direction = 180;
         }
         instance_destroy();
-}
-}else{
-    image_speed = 0;
+        }
+    }else{
+        image_speed = 0;
 }
 //show_debug_message(atual_X);
 
-//if (alarm[0] == -1){
-//    alarm[0] = room_speed * seg;
-//}
 
 
 </string>
