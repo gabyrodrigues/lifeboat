@@ -78,6 +78,9 @@ man_sinking_pos_X[3] = 643;
 man_sinking_pos_X[4] = 769;
 
 man_sinking_pos_Y = 305;
+
+//sons
+alarm[0] = -1;
 </string>
           </argument>
         </arguments>
@@ -106,6 +109,7 @@ man_sinking_pos_Y = 305;
 
     x = pos_X[atual_X];
     y = pos_Y[image_index];
+    
 
     if animation_hit_frame(5){
         //colisão
@@ -117,7 +121,7 @@ man_sinking_pos_Y = 305;
             global.chances += 1;
             global.resgate = 0;
             instance_create(958, 70, obj_miss);
-            //audio_play_sound(snd_miss2, 10, false);
+            audio_play_sound(snd_miss1, 10, false);
             
             if (global.chances == 1) {
                 obj_miss.image_index = 0;

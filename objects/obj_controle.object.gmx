@@ -31,6 +31,31 @@ spawn = "on";
 global.pause = false;
 global.tem_gente = false;
 global.game_over = false;
+
+alarm[1] = -1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>alarm[1] = -1;
 </string>
           </argument>
         </arguments>
@@ -91,10 +116,16 @@ if global.pause == false{
                 exit;
             }
             instance_create(0, 0, obj_man_falling);
+            //audio_play_sound(snd_move4, 0, false);
             
             spawn = "off";
             alarm[0] = room_speed * 1;
         }
+    }
+    
+    if (instance_exists(obj_man_falling) &amp;&amp; alarm[1] == -1){
+        audio_play_sound(snd_move4, 0, false);
+        alarm[1] = room_speed;
     }
 }
 </string>

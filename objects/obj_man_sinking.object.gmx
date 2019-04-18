@@ -72,6 +72,7 @@ alarm[0] = -1;
 }else {
     global.pause = false;
 }
+
 instance_destroy();
 </string>
           </argument>
@@ -98,18 +99,17 @@ instance_destroy();
             <string>x = pos_X[atual_X];
 image_index = atual_X;
 
-if image_index &gt;= 4 {//atual_X == 5 {
+if image_index &gt;= 4 {
     if alarm[0] == -1{
         alarm[0] = room_speed;
+        audio_play_sound(snd_miss2, 10, false);
     }
-    
 }
 
 if (int64(obj_shark.image_index) &gt; atual_X) {
     atual_X = obj_shark.image_index - 1;
 }
 
-show_debug_message(atual_X);
 
 </string>
           </argument>
