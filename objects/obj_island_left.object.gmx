@@ -2,7 +2,7 @@
 <object>
   <spriteName>spr_island</spriteName>
   <solid>0</solid>
-  <visible>-1</visible>
+  <visible>0</visible>
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
@@ -81,7 +81,9 @@ if (place_meeting(x, y, obj_boat)){
     if (global.resgate &gt; 0){
         global.resgate -= 1;
         global.points += 1;
-        
+        if(global.tem_gente == false){
+            instance_create(76, 211, obj_man_safe_left);
+        }
     }
 }
 </string>

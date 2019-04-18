@@ -34,12 +34,45 @@ pos_X[1] = 408;
 pos_X[2] = 535;
 pos_X[3] = 643;
 pos_X[4] = 769;
+pos_X[5] = 769;
 
 pos_Y = 305;
 
 atual_X = 0;
 
 y = pos_Y;
+
+image_index = atual_X;
+
+alarm[0] = -1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if global.chances == 3{
+    global.game_over = true;
+}else {
+    global.pause = false;
+}
+instance_destroy();
 </string>
           </argument>
         </arguments>
@@ -63,6 +96,20 @@ y = pos_Y;
           <argument>
             <kind>1</kind>
             <string>x = pos_X[atual_X];
+image_index = atual_X;
+
+if image_index &gt;= 4 {//atual_X == 5 {
+    if alarm[0] == -1{
+        alarm[0] = room_speed;
+    }
+    
+}
+
+if (int64(obj_shark.image_index) &gt; atual_X) {
+    atual_X = obj_shark.image_index - 1;
+}
+
+show_debug_message(atual_X);
 
 </string>
           </argument>

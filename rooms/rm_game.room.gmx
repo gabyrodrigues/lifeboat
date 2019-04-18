@@ -53,14 +53,14 @@
   <instances>
     <instance objName="obj_boat" x="510" y="285" name="inst_25DF3952" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_controle" x="96" y="160" name="inst_334B3328" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_island" x="155" y="300" name="inst_756F5B73" locked="0" code="" scaleX="1" scaleY="1" colour="16777215" rotation="0"/>
-    <instance objName="obj_island" x="864" y="300" name="inst_1E76709E" locked="0" code="" scaleX="1" scaleY="1" colour="16777215" rotation="0"/>
+    <instance objName="obj_island_left" x="155" y="300" name="inst_756F5B73" locked="0" code="" scaleX="1" scaleY="1" colour="16777215" rotation="0"/>
     <instance objName="obj_fumaca_left" x="244" y="206" name="inst_813BF577" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_fumaca_right" x="760" y="201" name="inst_566A2B76" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_shark" x="115" y="315" name="inst_68D93B68" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_points" x="96" y="32" name="inst_78C56BE9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_lifesaver_left" x="91" y="290" name="inst_1B60D7F2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_lifesaver_right" x="927" y="290" name="inst_030BC34F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_island_right" x="864" y="300" name="inst_1E6E737F" locked="0" code="" scaleX="1" scaleY="1" colour="16777215" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

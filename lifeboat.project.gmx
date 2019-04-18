@@ -41,7 +41,8 @@
   <objects name="objects">
     <object>objects\obj_boat</object>
     <object>objects\obj_controle</object>
-    <object>objects\obj_island</object>
+    <object>objects\obj_island_left</object>
+    <object>objects\obj_island_right</object>
     <object>objects\obj_man_falling</object>
     <object>objects\obj_fumaca_left</object>
     <object>objects\obj_fumaca_right</object>
@@ -53,6 +54,7 @@
     <object>objects\obj_miss</object>
     <object>objects\obj_man_sinking</object>
     <object>objects\obj_man_safe_left</object>
+    <object>objects\obj_man_safe_right</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_game</room>
