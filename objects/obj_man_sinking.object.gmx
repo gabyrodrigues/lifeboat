@@ -36,7 +36,7 @@ pos_X[3] = 643;
 pos_X[4] = 769;
 pos_X[5] = 769;
 
-pos_Y = 305;
+pos_Y = 315;
 
 atual_X = 0;
 
@@ -109,6 +109,8 @@ if image_index &gt;= 4 {
 if (int64(obj_shark.image_index) &gt; atual_X) {
     atual_X = obj_shark.image_index - 1;
 }
+
+show_debug_message(pos_Y);
 
 
 </string>

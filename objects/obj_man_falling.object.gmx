@@ -139,17 +139,15 @@ alarm[0] = -1;
             //nadando depois que não é resgatado
             instance_create(0, 0, obj_man_sinking);
             obj_man_sinking.atual_X = atual_X;
-            obj_man_sinking.y = 305;
+            obj_man_sinking.y = 338;
             obj_shark.image_index = 0;
             global.pause = true;
-            //man_sinking.direction = 180;
         }
         instance_destroy();
         }
-    }else{
-        image_speed = 0;
+}else{
+    image_speed = 0;
 }
-//show_debug_message(atual_X);
 
 
 
