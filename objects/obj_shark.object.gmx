@@ -27,20 +27,6 @@
             <kind>1</kind>
             <string>image_speed = 0.016;
 
-/*
-tubarão:
-
-120px - 760px
-y: 305px
-
-S1: 121px - 305px
-S2: 235px - 305px
-S3: 369px - 305px
-S4: 509px - 305px
-S5: 617px - 305px
-S6: 738px - 305px
-*/
-
 //posições fixas que tubarão percorre
 pos_X[0] = 115;
 pos_X[1] = 235;

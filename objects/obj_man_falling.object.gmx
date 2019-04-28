@@ -111,6 +111,7 @@ alarm[0] = -1;
     y = pos_Y[image_index];
     
 
+
     if animation_hit_frame(5){
         //colisão
         if (global.atual == (atual_X + 1) &amp;&amp; global.resgate &lt;= 3){
@@ -122,7 +123,7 @@ alarm[0] = -1;
             global.resgate = 0;
             instance_create(958, 70, obj_miss);
             audio_play_sound(snd_miss1, 10, false);
-            
+        
             if (global.chances == 1) {
                 obj_miss.image_index = 0;
             }else if (global.chances == 2) {
@@ -135,7 +136,7 @@ alarm[0] = -1;
                 obj_miss.image_index = 2;
                 global.pause = true;
             }
-            
+        
             //nadando depois que não é resgatado
             instance_create(0, 0, obj_man_sinking);
             obj_man_sinking.atual_X = atual_X;
@@ -144,13 +145,10 @@ alarm[0] = -1;
             global.pause = true;
         }
         instance_destroy();
-        }
+    }
 }else{
     image_speed = 0;
 }
-
-
-
 </string>
           </argument>
         </arguments>

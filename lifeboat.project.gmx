@@ -46,7 +46,6 @@
     <object>objects\obj_man_falling</object>
     <object>objects\obj_fumaca_left</object>
     <object>objects\obj_fumaca_right</object>
-    <object>objects\obj_dropper</object>
     <object>objects\obj_shark</object>
     <object>objects\obj_points</object>
     <object>objects\obj_lifesaver_left</object>

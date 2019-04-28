@@ -25,14 +25,20 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.game = 1;
+            <string>///variáveis globais de controle
+
+global.game = 1;
 alarm[0] = -1;
 spawn = "on";
-global.pause = false;
-global.tem_gente = false;
-global.game_over = false;
+global.pause = false; //caso esteja ativo, o jogo é pausado para a animação de perda de vida acontecer
+global.tem_gente = false; //checa se tem gente na ilha, caso negativo, resgata mais outro passageiro que estava no barco
+global.game_over = false; //caso ativo, o jogo acaba
 
 alarm[1] = -1;
+
+global.points = 0; //controla a pontuação
+global.chances = 0; //controla as chances
+global.resgate = 0; //controla o número de passageiros dentro do barco
 </string>
           </argument>
         </arguments>
@@ -79,7 +85,6 @@ alarm[1] = -1;
           <argument>
             <kind>1</kind>
             <string>spawn = "on";
-//audio_play_sound(snd_move4, 0, false);
 alarm[0] = -1;
 
 </string>
@@ -106,7 +111,6 @@ alarm[0] = -1;
             <kind>1</kind>
             <string>///spawner man_falling
 
-
 if global.pause == false{
     if spawn == "on"{
         var man_count = instance_number(obj_man_falling);
@@ -116,7 +120,6 @@ if global.pause == false{
                 exit;
             }
             instance_create(0, 0, obj_man_falling);
-            //audio_play_sound(snd_move4, 0, false);
             
             spawn = "off";
             alarm[0] = room_speed * 1;
@@ -128,6 +131,32 @@ if global.pause == false{
         alarm[1] = room_speed;
     }
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///desenha a pontuação
+draw_set_colour(c_black);
+draw_set_font(fnt_score);
+draw_text(125,40,global.points);
 </string>
           </argument>
         </arguments>
