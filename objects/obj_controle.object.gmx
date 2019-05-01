@@ -35,9 +35,6 @@ global.tem_gente = false; //checa se tem gente na ilha, caso negativo, resgata m
 global.game_over = false; //caso ativo, o jogo acaba
 global.pontos_ganhos = 1; //determina os pontos ganhos, começa com 1 mas caso a função bônus esteja ativada ele passa a ser 2
 
-global.des_X
-
-
 alarm[1] = -1;
 
 global.points = 0; //controla a pontuação
