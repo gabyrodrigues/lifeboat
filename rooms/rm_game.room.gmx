@@ -60,6 +60,7 @@
     <instance objName="obj_lifesaver_left" x="91" y="290" name="inst_1B60D7F2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_lifesaver_right" x="927" y="290" name="inst_030BC34F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_island_right" x="864" y="300" name="inst_1E6E737F" locked="0" code="" scaleX="1" scaleY="1" colour="16777215" rotation="0"/>
+    <instance objName="obj_game" x="915" y="322" name="inst_1D94B7CC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

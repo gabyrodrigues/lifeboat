@@ -25,18 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*
-passageiros:
-
-338px - 660px
-
-P1: 368px - 101px
-P2: 457px - 101px
-P3: 543px - 101px
-P4: 631px - 101px
-*/
-
-//posições fixas que o passageiro cai
+            <string>//posições fixas que o passageiro cai
 
 pos_X[0] = 335;
 pos_X[1] = 445;
@@ -51,24 +40,10 @@ pos_Y[4] = 262;
 pos_Y[5] = 262;
 
 atual_X = irandom_range(0, 3);
-//atual_Y = sprite_index;
 
 x = pos_X[atual_X];
 y = pos_Y[0];
 
-//seg = 1;
-
-//alarm[0] = -1;
-
-/*
-passageiros nadando:
-
-P1: 280px - 305px
-P2: 408px - 305px
-P3: 535px - 305px
-P4: 643px - 305px
-P5: 769px - 305px
-*/
 
 //posições fixas que o passageiro nada
 man_sinking_pos_X[0] = 280;
@@ -115,24 +90,42 @@ alarm[0] = -1;
     if animation_hit_frame(5){
         //colisão
         if (global.atual == (atual_X + 1) &amp;&amp; global.resgate &lt;= 3){
-            global.points += 1;
+            
+            /*
+                bônus: caso a pontuação chegue a 300 pontos
+                todas as chances são zeradas, e, caso não tenha chances 
+                perdidas a pontuação ganha é dobrada até que o jogador
+                perca uma vida
+            */
+            if global.points == 299 { 
+                if global.chances &gt; 0{ 
+                    global.chances = 0;
+                    instance_destroy(obj_miss);
+                }else{
+                    global.pontos_ganhos = 2;
+                }
+            }
+            
+            global.points += global.pontos_ganhos;
             global.resgate += 1;
+            show_debug_message(global.points);
         }else{
             //codigo para perder vida
+            global.pontos_ganhos = 1;
             global.chances += 1;
             global.resgate = 0;
-            instance_create(958, 70, obj_miss);
+            instance_create(990, 70, obj_miss);
             audio_play_sound(snd_miss1, 10, false);
         
             if (global.chances == 1) {
                 obj_miss.image_index = 0;
             }else if (global.chances == 2) {
                 instance_destroy(obj_miss);
-                instance_create(958, 70, obj_miss);
+                instance_create(990, 70, obj_miss);
                 obj_miss.image_index = 1;
             } else if (global.chances == 3) {
                 instance_destroy(obj_miss);
-                instance_create(958, 70, obj_miss);
+                instance_create(990, 70, obj_miss);
                 obj_miss.image_index = 2;
                 global.pause = true;
             }

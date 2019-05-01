@@ -33,6 +33,10 @@ spawn = "on";
 global.pause = false; //caso esteja ativo, o jogo é pausado para a animação de perda de vida acontecer
 global.tem_gente = false; //checa se tem gente na ilha, caso negativo, resgata mais outro passageiro que estava no barco
 global.game_over = false; //caso ativo, o jogo acaba
+global.pontos_ganhos = 1; //determina os pontos ganhos, começa com 1 mas caso a função bônus esteja ativada ele passa a ser 2
+
+global.des_X
+
 
 alarm[1] = -1;
 
@@ -120,9 +124,9 @@ if global.pause == false{
                 exit;
             }
             instance_create(0, 0, obj_man_falling);
-            
             spawn = "off";
             alarm[0] = room_speed * 1;
+
         }
     }
     
@@ -131,6 +135,33 @@ if global.pause == false{
         alarm[1] = room_speed;
     }
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///encerramento do jogo
+tecla_F = keyboard_check_pressed(ord('F')); //encerramento total
+
+if tecla_F{
+    game_end();
+}
+
 </string>
           </argument>
         </arguments>
